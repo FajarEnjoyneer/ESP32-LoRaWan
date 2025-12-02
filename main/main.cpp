@@ -137,13 +137,13 @@ extern "C" void app_main() {
     size_t downlinkSize = 0;
 
     state = node.sendReceive(uplinkPayload, sizeof(uplinkPayload), fPort, downlinkPayload, &downlinkSize);
-    if (state != RADIOLIB_LORAWAN_NO_DOWNLINK && state != RADIOLIB_ERR_NONE) {
+    if (state != RADIOLIB_LORAWAN_DOWNLINK && state != RADIOLIB_ERR_NONE) {
         ESP_LOGE(TAG, "Error in sendReceive: %d", state);
     } else {
         ESP_LOGI(TAG, "Uplink sent. FcntUp: %u", (unsigned)node.getFCntUp());
     }
 
-    if (state != RADIOLIB_LORAWAN_NO_DOWNLINK) {
+    if (state != RADIOLIB_LORAWAN_DOWNLINK) {
         if (downlinkSize > 0) {
             ESP_LOGI(TAG, "Downlink received (%u bytes):", (unsigned)downlinkSize);
             char hexline[128];
