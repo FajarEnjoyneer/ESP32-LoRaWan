@@ -1,0 +1,21 @@
+dependencies:
+  idf:
+    source:
+      type: idf
+    version: 6.1.0
+  jgromes/radiolib:
+    component_hash: ef771662860161bd141c57ffba342b3785c1384804ce3b0545515186332343ac
+    dependencies:
+    - name: idf
+      require: private
+      version: '>=4.1'
+    source:
+      registry_url: https://components.espressif.com/
+      type: service
+    version: 7.4.0
+direct_dependencies:
+- idf
+- jgromes/radiolib
+manifest_hash: 9ddf4f29dc6676c131f76735a367fa4367aa0621fb7b0afc6c74d0eaf057bc6d
+target: esp32
+version: 2.0.0
