@@ -77,8 +77,11 @@ extern "C" void app_main() {
     int16_t state = radio.begin();
     if (state != RADIOLIB_ERR_NONE) {
         ESP_LOGE(TAG, "Init radio failed, code: %d", state);
+        ESP_LOGE(TAG, "Connection to LoRa module failed. Check wiring.");
         /* cannot proceed if radio init failed */
         for (;;) { vTaskDelay(pdMS_TO_TICKS(1000)); }
+    } else {
+        ESP_LOGI(TAG, "Connection to LoRa module successful.");
     }
 
     node.beginOTAA(joinEUI, devEUI, nwkKey, appKey);

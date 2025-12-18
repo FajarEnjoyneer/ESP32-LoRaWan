@@ -259,7 +259,7 @@ uint64_t devEUI  = RADIOLIB_LORAWAN_DEV_EUI;
 uint8_t appKey[] = RADIOLIB_LORAWAN_APP_KEY;
 uint8_t nwkKey[] = RADIOLIB_LORAWAN_NWK_KEY;
 uint32_t uplinkIntervalSeconds = 60;
-#define LORA_SS       25
+#define LORA_SS       5
 #define LORA_SCK      18
 #define LORA_MOSI     23
 #define LORA_MISO     19
